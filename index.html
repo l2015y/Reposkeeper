@@ -259,7 +259,7 @@
 
         xrh.onreadystatechange = function () {
             if ((xrh.readyState == 4) && (xrh.status == 200)) {
-                var json=eval( '('+xrh.responseText+')' );
+                var json = JSON.parse(xrh.responseText);
                 var output = "<h3 class='tab_name'>Repositories</h3>"+"<ul class='list; list_item'>";
                 for(var i in json) {
                     output += "<li class='repo' style='color: #4078c0'>" + json[i].name + "<br/>" + "<a href=\""+json[i].clone_url+"\" ; class='repo-description; css-truncate-target'>" + json[i].clone_url + "<br>";
